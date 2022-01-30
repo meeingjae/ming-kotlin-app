@@ -1,4 +1,4 @@
-package com.example.zapapp.Entity
+package com.example.app.entity
 
 import org.springframework.data.annotation.CreatedDate
 import java.time.Instant

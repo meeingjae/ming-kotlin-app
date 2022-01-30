@@ -1,4 +1,4 @@
-package com.example.zapapp.Entity
+package com.example.app.entity
 
 import javax.persistence.*
 
@@ -8,7 +8,11 @@ data class RestHookEventFilter(
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "REST_HOOK_EVENT_FILTER_SEQ")
-    @SequenceGenerator(name = "REST_HOOK_EVENT_FILTER_SEQ", sequenceName = "REST_HOOK_EVENT_FILTER_SEQ", allocationSize = 1)
+    @SequenceGenerator(
+        name = "REST_HOOK_EVENT_FILTER_SEQ",
+        sequenceName = "REST_HOOK_EVENT_FILTER_SEQ",
+        allocationSize = 1
+    )
     @Column(name = "REST_HOOK_EVENT_FILTER_UID")
     var restHookEventFilterUid: Long? = 0,
 

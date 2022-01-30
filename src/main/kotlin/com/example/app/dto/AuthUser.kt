@@ -1,4 +1,4 @@
-package com.example.zapapp.Dto
+package com.example.app.dto
 
 class AuthUser (
     var userName: String,

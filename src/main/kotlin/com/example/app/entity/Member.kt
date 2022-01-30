@@ -1,4 +1,4 @@
-package com.example.zapapp.Entity
+package com.example.app.entity
 
 import javax.persistence.*
 

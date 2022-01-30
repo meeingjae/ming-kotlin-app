@@ -1,12 +1,12 @@
-package com.example.zapapp.controller
+package com.example.app.controller
 
-import com.example.zapapp.Dto.Entities
-import com.example.zapapp.Entity.Member
-import com.example.zapapp.Entity.RestHook
-import com.example.zapapp.Entity.RestHookEventFilter
-import com.example.zapapp.Repository.MemberRepository
-import com.example.zapapp.Repository.RestHookEventFilterRepository
-import com.example.zapapp.Repository.RestHookRepository
+import com.example.app.dto.Entities
+import com.example.app.entity.Member
+import com.example.app.entity.RestHook
+import com.example.app.entity.RestHookEventFilter
+import com.example.app.repository.MemberRepository
+import com.example.app.repository.RestHookEventFilterRepository
+import com.example.app.repository.RestHookRepository
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*

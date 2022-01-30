@@ -1,6 +1,6 @@
-package com.example.zapapp.Repository
+package com.example.app.repository
 
-import com.example.zapapp.Entity.RestHookEventFilter
+import com.example.app.entity.RestHookEventFilter
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
