@@ -1,8 +1,4 @@
-package com.example.zapapp.Dto
-
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+package com.example.app.dto
 
 class Entities {
 

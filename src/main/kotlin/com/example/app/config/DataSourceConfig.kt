@@ -1,4 +1,4 @@
-package com.example.zapapp.config
+package com.example.app.config
 
 import com.zaxxer.hikari.HikariDataSource
 import org.springframework.boot.context.properties.ConfigurationProperties
@@ -18,29 +18,29 @@ import javax.sql.DataSource
 @EnableJpaRepositories(
     entityManagerFactoryRef = "entityManagerFactory",
     transactionManagerRef = "transactionManager",
-    basePackages = ["com.example.zapapp"]
+    basePackages = ["com.example.app"]
 )
-class DataSourceConfig {
+open class DataSourceConfig {
 
     @Primary
     @Bean
     @ConfigurationProperties("spring.datasource.hikari")
-    fun dataSource(): DataSource {
+    open fun dataSource(): DataSource {
         return DataSourceBuilder.create().type(HikariDataSource::class.java).build()
     }
 
     @Primary
     @Bean
-    fun entityManagerFactory(builder: EntityManagerFactoryBuilder): LocalContainerEntityManagerFactoryBean {
+    open fun entityManagerFactory(builder: EntityManagerFactoryBuilder): LocalContainerEntityManagerFactoryBean {
         return builder.dataSource(this.dataSource())
-            .packages("com.example.zapapp")
+            .packages("com.example.app")
             .persistenceUnit("hikari")
             .build()
     }
 
     @Primary
     @Bean
-    fun transactionManager(builder: EntityManagerFactoryBuilder): JpaTransactionManager {
+    open fun transactionManager(builder: EntityManagerFactoryBuilder): JpaTransactionManager {
         return JpaTransactionManager(entityManagerFactory(builder).`object`!!)
     }
 }

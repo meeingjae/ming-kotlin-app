@@ -1,13 +1,13 @@
-package com.example.zapapp
+package com.example.app
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class ZapappApplicationTests {
+open class ZapappApplicationTests {
 
     @Test
-    fun contextLoads() {
+    open fun contextLoads() {
     }
 
 }
