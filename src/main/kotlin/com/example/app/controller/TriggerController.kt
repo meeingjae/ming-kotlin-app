@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*
 import java.time.Instant
 import java.util.*
 
-@RestController
-class IndexController {
+@RestController(value = "/trigger")
+class TriggerController {
 
     private val logger = KotlinLogging.logger {}
 
@@ -27,8 +27,8 @@ class IndexController {
     @Autowired
     lateinit var restHookEventFilterRepository: RestHookEventFilterRepository
 
-    @GetMapping("/index")
-    fun index(
+    @GetMapping("/member-info")
+    fun memberInfo(
         @RequestParam userName: String,
         @RequestParam userPass: String
     ): Long {
@@ -44,7 +44,7 @@ class IndexController {
         return member.memberUid
     }
 
-    @PostMapping("/trigger")
+    @PostMapping
     fun subscribe(@RequestBody subscribeData: Entities.SubscribeData): Entities.SubscribeResponse {
         logger.info { subscribeData.toString() }
 
@@ -76,7 +76,7 @@ class IndexController {
         return Entities.SubscribeResponse(restHook.restHookUid)
     }
 
-    @DeleteMapping("/trigger")
+    @DeleteMapping
     fun unsubscribe(@RequestBody unSubscribeData: Entities.UnSubscribeData): String {
         logger.info { unSubscribeData.id }
 
@@ -109,6 +109,6 @@ class IndexController {
             )
         )
         logger.info { user1 }
-        return arrayOf<Entities.PlainUser>(user1, user2)
+        return arrayOf(user1, user2)
     }
 }
