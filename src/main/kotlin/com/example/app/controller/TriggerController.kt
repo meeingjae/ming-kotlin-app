@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*
 import java.time.Instant
 import java.util.*
 
-@RestController(value = "/trigger")
+@RestController
+@RequestMapping("/trigger")
 class TriggerController {
 
     private val logger = KotlinLogging.logger {}
@@ -46,6 +47,7 @@ class TriggerController {
 
     @PostMapping
     fun subscribe(@RequestBody subscribeData: Entities.SubscribeData): Entities.SubscribeResponse {
+
         logger.info { subscribeData.toString() }
 
         val member: Member = memberRepository.findByUserName(subscribeData.username)
@@ -92,7 +94,7 @@ class TriggerController {
         return "success"
     }
 
-    @GetMapping("/performlist")
+    @GetMapping("/perform-list")
     fun performList(): Array<Entities.PlainUser> {
         var user1 = Entities.PlainUser(
             "mingFirst11", "mingLast11",
@@ -109,6 +111,7 @@ class TriggerController {
             )
         )
         logger.info { user1 }
+
         return arrayOf(user1, user2)
     }
 }
