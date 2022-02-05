@@ -2,7 +2,7 @@ package com.example.app.entity
 
 import javax.persistence.*
 
-@Entity
+@Entity //@Data 사용은 지양. toString()이 자동 생성되어, 순환참조 문제를 야기할 수 있음
 @Table(name = "E_MEMBER")
 data class Member(
 
