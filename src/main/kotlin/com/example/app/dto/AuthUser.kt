@@ -1,6 +1,6 @@
 package com.example.app.dto
 
-class AuthUser (
+class AuthUser(
     var userName: String,
     var userPass: String
-        )
+)

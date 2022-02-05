@@ -3,16 +3,19 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.5.6"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("org.jetbrains.kotlin.plugin.jpa") version "1.3.61" //TODO: Version 확인
+    id("org.jetbrains.kotlin.plugin.allopen") version "1.3.61" //TODO: Version 확인
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31"
-    kotlin("plugin.jpa") version "1.5.31"
-    kotlin("plugin.allopen") version "1.4.32"
+//  kotlin("plugin.jpa") version "1.5.31"
+//  kotlin("plugin.allopen") version "1.4.32"
 }
 
-allOpen {
+allOpen {   // Kotlin은 final이 기본. Hibernate의 Entity는 final일 수 없다. (Hibernate User Guide - POJO Models 5번 항목)
+            // JPA -> 런타임에 Entity Proxy Object를 생성 (Lazy와 같은 동작 수행해야하기 때문)
     annotation("javax.persistence.Entity")
-    annotation("javax.persistence.Embeddable")
-    annotation("javax.persistence.MappedSuperclass")
+//  annotation("javax.persistence.Embeddable")
+//  annotation("javax.persistence.MappedSuperclass")
 }
 
 group = "com.example"
