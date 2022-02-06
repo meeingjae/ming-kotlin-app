@@ -4,7 +4,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "E_REST_HOOK_EVENT_FILTER")
-data class RestHookEventFilter(
+class RestHookEventFilter(
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "REST_HOOK_EVENT_FILTER_SEQ")

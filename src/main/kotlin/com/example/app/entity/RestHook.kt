@@ -7,7 +7,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "E_REST_HOOK")
-data class RestHook(
+class RestHook(
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "REST_HOOK_SEQ")
