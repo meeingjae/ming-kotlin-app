@@ -1,0 +1,27 @@
+### URL 및 User 데이터는 environment 파일로 관리
+
+### Trigger 테스트
+POST {{host}}/trigger
+accept: application/json
+content-type: application/json
+
+{
+  "hookUrl": "NoncolumnTestUser@naaaaa.com",
+  "username": "mingname",
+  "hookType": "mingTest",
+  "dataType": "contact",
+  "eventType": "keyword",
+  "distributionListUid": 123,
+  "version": ""
+}
+
+### member-info 테스트
+GET {{host}}/trigger/member-info?userName={{userName}}&userPass={{userPass}}
+accept: application/json
+
+
+### Global 변수 선언 및 사용
+###> {%
+###client.global.set("globalTest", response.body.userName);
+### %}
+### {{globalTest}} 로 사용
