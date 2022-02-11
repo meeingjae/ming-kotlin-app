@@ -5,13 +5,17 @@
 
 ---
 ## Project 구성
+- jdk 11
 - RDB - Oracle (Docker Image - oracle11g jaspeen/oracle-xe-11g) // Local
  --- 
 
 ## TODO List
 > #### 고민사항 
 > - 이 프로젝트로 할 수 있는 것(주제) 고민
-> - OAuth2 인증 도입할 서비스 고민
+> - OAuth2 인증 도입
+>   - AWS 이관 이후 로그인 정보 REDIS에 보관
+> - AWS 이관 이후 API Monitoring ([Pinpoint](https://github.com/pinpoint-apm/pinpoint))
+> - AWS 이관 이후 API 부하 테스트 ([ngrinder](https://github.com/naver/ngrinder))
 > #### 체크사항
 > - ~~JPA ``@Entity`` Class에 ``@Column`` Annotation 사용하지 않을 경우 어떤 변화가 있는지 확인~~
 > -->  결과 : 각 field명을 Default 컬럼명으로 매핑해서 사용
