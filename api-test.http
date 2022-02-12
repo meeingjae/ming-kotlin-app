@@ -1,6 +1,6 @@
 ### URL 및 User 데이터는 environment 파일로 관리
 
-### Trigger 테스트
+### Trigger 테스트 - subscribe
 POST {{host}}/trigger
 accept: application/json
 content-type: application/json
@@ -15,13 +15,23 @@ content-type: application/json
   "version": ""
 }
 
+> {%
+client.global.set("hookId", response.body.id);
+%}
+
+### Delete Trigger 테스트 - unsubscribe
+DELETE {{host}}/trigger
+accept: application/json
+content-type: application/json
+
+{
+  "id": {{hookId}}
+}
+
 ### member-info 테스트
 GET {{host}}/trigger/member-info?userName={{userName}}&userPass={{userPass}}
 accept: application/json
 
-
-### Global 변수 선언 및 사용
-###> {%
-###client.global.set("globalTest", response.body.userName);
-### %}
-### {{globalTest}} 로 사용
+### performList 테스트
+GET {{host}}/trigger/perform-list
+accept: application/json

@@ -1,6 +1,6 @@
 package com.example.app.controller
 
-import com.example.app.TriggerService
+import com.example.app.service.TriggerService
 import com.example.app.dto.Entities
 import mu.KotlinLogging
 import org.springframework.web.bind.annotation.*
