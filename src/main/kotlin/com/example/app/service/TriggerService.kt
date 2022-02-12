@@ -1,4 +1,4 @@
-package com.example.app
+package com.example.app.service
 
 import com.example.app.dto.Entities
 import com.example.app.entity.Member
