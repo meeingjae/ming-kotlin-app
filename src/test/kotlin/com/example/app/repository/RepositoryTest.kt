@@ -17,7 +17,7 @@ open class RepositoryTest @Autowired constructor(
     @Test
     fun `Member Repository Sequence Test`() {
 
-        memberRepository.save(Member(10000L,"testName","testPassword"))
+        memberRepository.save(Member(10000L, "testName", "testPassword"))
         val testMember = memberRepository.findByUserName("testName")
         assert(testMember.userName == "testName" && testMember.memberUid == 1L) // SequenceGenerate
     }
@@ -25,14 +25,14 @@ open class RepositoryTest @Autowired constructor(
     @Test
     fun `Column Annotation Default Name Test`() {
 
-        columnAnnotationTestRepository.save(ColumnAnnotationTest(1L,"testname"))
+        columnAnnotationTestRepository.save(ColumnAnnotationTest(1L, "testname"))
         val test = columnAnnotationTestRepository.findById(1L)
 
         if (test.isEmpty) {
             assert(false)
         } else {
             val existTest = test.get()
-            assert(existTest.thisId ==1L && existTest.name == "testname")
+            assert(existTest.thisId == 1L && existTest.name == "testname")
             println("thisId : " + existTest.thisId + ", name : " + existTest.name)
         }
     }

@@ -7,6 +7,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.allopen") version "1.3.61" //TODO: Version 확인
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31"
+    kotlin("kapt") version "1.3.61"
 //  kotlin("plugin.jpa") version "1.5.31"
 //  kotlin("plugin.allopen") version "1.4.32"
 }
@@ -49,6 +50,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(kotlin("test"))
+
+    implementation("com.querydsl:querydsl-jpa")
+    kapt("com.querydsl:querydsl-apt:5.0.0:jpa")
+
 }
 
 tasks.withType<KotlinCompile> {
