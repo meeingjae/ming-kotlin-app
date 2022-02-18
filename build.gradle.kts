@@ -13,7 +13,7 @@ plugins {
 }
 
 allOpen {   // Kotlin은 final이 기본. Hibernate의 Entity는 final일 수 없다. (Hibernate User Guide - POJO Models 5번 항목)
-            // JPA -> 런타임에 Entity Proxy Object를 생성 (Lazy와 같은 동작 수행해야하기 때문)
+    // JPA -> 런타임에 Entity Proxy Object를 생성 (Lazy와 같은 동작 수행해야하기 때문)
     annotation("javax.persistence.Entity")
 //  annotation("javax.persistence.Embeddable")
 //  annotation("javax.persistence.MappedSuperclass")
@@ -52,7 +52,8 @@ dependencies {
     testImplementation(kotlin("test"))
 
     implementation("com.querydsl:querydsl-jpa")
-    kapt("com.querydsl:querydsl-apt:5.0.0:jpa")
+    implementation("com.querydsl:querydsl-core")
+    kapt("com.querydsl:querydsl-apt:4.4.0:jpa")
 
 }
 
