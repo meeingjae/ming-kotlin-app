@@ -11,7 +11,8 @@ open class RepositoryTest @Autowired constructor(
     val memberRepository: MemberRepository,
     val restHookRepository: RestHookRepository,
     val restHookEventFilterRepository: RestHookEventFilterRepository,
-    val columnAnnotationTestRepository: ColumnAnnotationTestRepository
+    val columnAnnotationTestRepository: ColumnAnnotationTestRepository,
+    val memberRepositoryImpl: MemberRepositoryImpl
 ) {
 
     @Test
@@ -35,5 +36,11 @@ open class RepositoryTest @Autowired constructor(
             assert(existTest.thisId == 1L && existTest.name == "testname")
             println("thisId : " + existTest.thisId + ", name : " + existTest.name)
         }
+    }
+
+    @Test
+    fun `Querydsl Test`() {
+
+        memberRepositoryImpl.findAll();
     }
 }
