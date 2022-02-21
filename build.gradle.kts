@@ -69,5 +69,54 @@ tasks.withType<Test> {
 }
 
 tasks.test {
+    dependsOn("ok")
     useJUnitPlatform()
+}
+
+gradle.beforeProject {
+    //이녀석은 언제..?
+    if (state.failure != null) {
+        println("$project beforeProject ----------------FAILED")
+    } else {
+        println("$project beforeProject ----------------SUCCESS")
+    }
+}
+
+gradle.afterProject {
+    //project Configure 시작 단계에서 호출
+    if (state.failure != null) {
+        println("$project afterProject ----------------FAILED")
+    } else {
+        println("$project afterProject ----------------SUCCESS")
+    }
+}
+
+//tasks.whenTaskAdded {
+//    extra["srcDir"] = "src/main/java"
+//}
+//
+//val a by tasks.registering
+//
+//println("source dir is ${a.get().extra["srcDir"]}")
+
+tasks.register("ok") {
+    println("task $this progress...")
+    println("task $this done.")
+}
+
+tasks.register("failed") {
+    dependsOn("ok")
+    doLast {
+        throw RuntimeException("failed...")
+    }
+}
+
+gradle.taskGraph.beforeTask {
+    // 특정 Task가 실행되기 전에 어떠한 행위를 할 수 있다. (ex. logging)
+    println(" before task name : $this")
+}
+
+gradle.taskGraph.afterTask {
+    //특정 Task가 완료된 후 어떠한 행위를 할 수 있다. (ex. logging)
+    println(" after task name : $this")
 }
