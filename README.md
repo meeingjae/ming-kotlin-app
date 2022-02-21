@@ -7,6 +7,7 @@
 ## Project 구성
 - jdk 11
 - RDB - Oracle (Docker Image - oracle11g jaspeen/oracle-xe-11g) // Local
+- querydsl 4.0.0
  --- 
 
 ## TODO List
@@ -24,4 +25,5 @@
 > - ~~기본 로직 Trigger Controller에서 Service로 분리~~
 > - ~~Repository Test 작성~~
 > - querydsl 작성 (동적쿼리, 복잡한 쿼리)
+> - build.gradle 익히기
 --- 

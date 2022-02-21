@@ -11,8 +11,8 @@ open class RepositoryTest @Autowired constructor(
     val memberRepository: MemberRepository,
     val restHookRepository: RestHookRepository,
     val restHookEventFilterRepository: RestHookEventFilterRepository,
-    val columnAnnotationTestRepository: ColumnAnnotationTestRepository,
-    val memberRepositoryImpl: MemberRepositoryImpl
+    val columnAnnotationTestRepository: ColumnAnnotationTestRepository
+//    val memberRepositoryImpl: MemberRepositoryImpl
 ) {
 
     @Test
@@ -38,9 +38,9 @@ open class RepositoryTest @Autowired constructor(
         }
     }
 
-    @Test
-    fun `Querydsl Test`() {
-
-        memberRepositoryImpl.findAll();
-    }
+//    @Test
+//    fun `Querydsl Test`() {
+//
+//        memberRepositoryImpl.findAll();
+//    }
 }
