@@ -17,6 +17,7 @@
 >   - AWS 이관 이후 로그인 정보 REDIS에 보관
 > - AWS 이관 이후 API Monitoring ([Pinpoint](https://github.com/pinpoint-apm/pinpoint))
 > - AWS 이관 이후 API 부하 테스트 ([ngrinder](https://github.com/naver/ngrinder))
+> - AWS 이관 이후 BeanStalk - CI/CD 환경 검토
 > - Spring batch
 > #### 체크사항
 > - ~~JPA ``@Entity`` Class에 ``@Column`` Annotation 사용하지 않을 경우 어떤 변화가 있는지 확인~~
