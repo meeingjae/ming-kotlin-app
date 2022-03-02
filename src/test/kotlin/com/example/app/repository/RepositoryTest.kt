@@ -11,7 +11,9 @@ open class RepositoryTest @Autowired constructor(
     val memberRepository: MemberRepository,
     val restHookRepository: RestHookRepository,
     val restHookEventFilterRepository: RestHookEventFilterRepository,
-    val columnAnnotationTestRepository: ColumnAnnotationTestRepository
+    val columnAnnotationTestRepository: ColumnAnnotationTestRepository,
+    val cafeRepository: CafeRepository,
+    val drinkRepository: DrinkRepository
 //    val memberRepositoryImpl: MemberRepositoryImpl
 ) {
 

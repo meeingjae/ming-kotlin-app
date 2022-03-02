@@ -1,10 +1,10 @@
 package com.example.app.repository
 
-import com.example.app.entity.Member
-import com.example.app.entity.QMember
-import com.querydsl.jpa.impl.JPAQueryFactory
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Repository
+//import com.example.app.entity.Member
+//import com.example.app.entity.QMember
+//import com.querydsl.jpa.impl.JPAQueryFactory
+//import org.springframework.beans.factory.annotation.Autowired
+//import org.springframework.stereotype.Repository
 
 //@Repository
 //class MemberRepositoryImpl @Autowired constructor(
