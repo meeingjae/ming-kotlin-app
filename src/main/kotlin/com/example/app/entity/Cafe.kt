@@ -14,5 +14,5 @@ class Cafe(
     @Column(name = "OWNER_UID") var ownerUid: Long = 0,
 
     @OneToMany(mappedBy = "cafe")
-    var drinks: MutableSet<Drink> = TreeSet()
+    var drinks: MutableList<Drink> = mutableListOf()
 )

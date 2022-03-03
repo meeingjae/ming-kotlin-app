@@ -1,7 +1,11 @@
 package com.example.app.repository
 
+import com.example.app.entity.Cafe
 import com.example.app.entity.ColumnAnnotationTest
+import com.example.app.entity.Drink
 import com.example.app.entity.Member
+import org.aspectj.lang.annotation.Before
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
@@ -40,9 +44,25 @@ open class RepositoryTest @Autowired constructor(
         }
     }
 
-//    @Test
-//    fun `Querydsl Test`() {
-//
-//        memberRepositoryImpl.findAll();
-//    }
+    @Test
+    fun `one to many test`() {
+
+        val americano:Drink = drinkRepository.save(Drink(drinkUid = 1L, drinkName = "americano", drinkPrice = "1000", null))
+        val icetea:Drink = drinkRepository.save(Drink(drinkUid = 2L, drinkName = "icetea", drinkPrice = "1500", null))
+
+        cafeRepository.save(
+            Cafe(
+                cafeUid = 1L,
+                cafeName = "starbucks",
+                drinks = listOf<Drink>(
+                    americano,
+                    icetea
+                ) as MutableList<Drink>
+            )
+        )
+
+        val cafe: Cafe = cafeRepository.findByCafeUid(1L)
+
+        assert(cafe.drinks.size == 2)
+    }
 }

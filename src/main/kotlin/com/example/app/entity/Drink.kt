@@ -12,7 +12,7 @@ class Drink(
     @Column(name = "DRINK_NAME") var drinkName: String = "",
     @Column(name = "DRINK_PRICE") var drinkPrice: String = "",
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CAFE_UID")
-    var cafe: Cafe
+    @JoinColumn(name = "cafeUid")
+    var cafe: Cafe? = Cafe()
 )
 
